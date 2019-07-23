@@ -28,13 +28,38 @@ for (let i = 0; i < allButtons.length; i++) {
 }
  
 var n=0
-console.log(n%3)
-allButtons.eq(n%3).trigger('click')//功能强大一点的trigger
-setInterval(() => {
+var size = allButtons.length
+allButtons.eq(n%size).trigger('click')
+  .addClass('red')//功能强大一点的trigger
+  .siblings('.red').removeClass('red')
+var timeId=setInterval(() => {
   n+=1
-  console.log(n%3)
-  allButtons.eq(n%3).click()
+  allButtons.eq(n%size).click()
+    .addClass('red')
+    .siblings('.red').removeClass('red')
 }, 1000);
+
+$('.window').on('mouseenter', function() {
+  window.clearInterval(timeId)
+})
+
+$('.window').on('mouseleave', function() {
+   timeId = setInterval(() => {
+    n+=1
+    allButtons.eq(n%size).click()
+      .addClass('red')
+      .siblings('.red').removeClass('red')
+  }, 1000);
+})
+
+
+
+
+
+
+
+
+
 
 // var allButtons=$('#buttons>button')
 // for (let i = 0; i < allButtons.length; i++) {
