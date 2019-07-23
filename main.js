@@ -42,9 +42,21 @@ var timeId=setInterval(() => {
 $('.window').on('mouseenter', function() {
   window.clearInterval(timeId)
 })
+$('#buttons').on('mouseenter', function() {
+  window.clearInterval(timeId)
+})
+$('#buttons').on('mouseleave', function() {
+  timeId = setInterval(() => {
+  n+=1
+  allButtons.eq(n%size).click()
+    .addClass('red')
+    .siblings('.red').removeClass('red')
+}, 1000);
+})
+
 
 $('.window').on('mouseleave', function() {
-   timeId = setInterval(() => {
+    timeId = setInterval(() => {
     n+=1
     allButtons.eq(n%size).click()
       .addClass('red')
