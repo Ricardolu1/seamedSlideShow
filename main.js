@@ -29,9 +29,11 @@ for (let i = 0; i < allButtons.length; i++) {
  
 var n=0
 console.log(n%3)
+allButtons.eq(n%3).trigger('click')//功能强大一点的trigger
 setInterval(() => {
   n+=1
   console.log(n%3)
+  allButtons.eq(n%3).click()
 }, 1000);
 
 // var allButtons=$('#buttons>button')
