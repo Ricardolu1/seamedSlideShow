@@ -26,8 +26,24 @@ for (let i = 0; i < allButtons.length; i++) {
     })
   });
 }
+ 
+var n=0
+console.log(n%3)
+setInterval(() => {
+  n+=1
+  console.log(n%3)
+}, 1000);
 
-
+// var allButtons=$('#buttons>button')
+// for (let i = 0; i < allButtons.length; i++) {
+//   $(allButtons[i]).on('click',function(x) {
+//     let index = i
+//     let n = (-300)*index
+//     $('#images').css({
+//       transform:'translateX(' + n + 'px)'
+//     })
+//   });
+// }
 
 
 
