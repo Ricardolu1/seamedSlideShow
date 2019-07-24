@@ -15,6 +15,15 @@
 }
 
 
+.slideShow{
+  width:300px;
+  position:relative;
+  top:50%;
+  margin:auto;
+  text-align:center
+}
+
+
 
 
 
